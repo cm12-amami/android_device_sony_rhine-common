@@ -71,8 +71,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Filesystem management tools
-PRODUCT_PACKAGES += \
-    e2fsck
+ PRODUCT_PACKAGES += \
+    e2fsck \
+    make_f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
 
 # FM Radio
 PRODUCT_COPY_FILES += \
