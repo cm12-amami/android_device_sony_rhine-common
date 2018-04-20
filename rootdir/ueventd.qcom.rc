@@ -89,7 +89,6 @@
 /dev/video*               0660   system     camera
 /dev/ttyHSL1              0660   system     system
 /dev/radio0               0640   system     system
-/dev/gss                  0660   gps        gps
 /dev/rfkill               0660   wifi       wifi
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
 
@@ -146,6 +145,9 @@
 /dev/hidraw1                                     0666  system  system
 /dev/hidraw2                                     0666  system  system
 
+# FM
+/sys/module/radio_iris_transport/parameters/fmsmd_set 0660 system system
+
 # MHL
 /sys/devices/f9967000.i2c/i2c-4/4-0072/mhl/sii8334    mouse_mode   0660  system  system
 /sys/devices/f9967000.i2c/i2c-4/4-0072/mhl/sii8334    screen_status 0660  system  system
@@ -156,3 +158,24 @@
 /dev/uio0                 0660   system     system
 /dev/uio1                 0660   system     system
 /dev/uio2                 0660   system     system
+
+# Lights
+/sys/devices/01-qcom,leds-d000/leds/led:*                       max_brightness      0664 system system
+/sys/devices/01-qcom,leds-d000/leds/led:*                       brightness          0664 system system
+/sys/devices/01-qcom,leds-d000/leds/led:*                       blink               0664 system system
+/sys/devices/01-qcom,leds-d000/leds/led:*                       duty_pcts           0664 system system
+/sys/devices/01-qcom,leds-d000/leds/led:*                       ramp_step_ms        0664 system system
+/sys/devices/01-qcom,leds-d800/leds/wled:backlight              max_brightness      0664 system system
+/sys/devices/01-qcom,leds-d800/leds/wled:backlight              brightness          0664 system system
+/sys/devices/mdp.0/qcom,mdss_fb_primary.174/leds/lcd-backlight  brightness          0664 system system
+/sys/devices/mdp.0/qcom,mdss_fb_primary.174/leds/lcd-backlight  max_brightness      0664 system system
+
+# TA
+/dev/block/bootdevice/by-name/TA 0770  tad      tad
+/dev/block/platform/msm_sdcc.1/by-name/TA 0770 tad tad
+
+/dev/cam                  0660   root       camera
+/dev/pmem                 0660   system     graphics
+/dev/pmem_adsp*           0660   system     audio
+/dev/pmem_camera*         0660   system     camera
+/dev/msm_hw3dm            0660   system     graphics

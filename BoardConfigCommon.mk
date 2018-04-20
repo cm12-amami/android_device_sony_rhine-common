@@ -19,11 +19,13 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/rhine-common/include
 
 # Platform
 BOARD_VENDOR_PLATFORM := rhine
+PRODUCT_PLATFORM:= rhine
 
 # Kernel information
 BOARD_KERNEL_BASE     := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE  := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 vmalloc=300M dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y
+BOARD_KERNEL_CMDLINE  += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 BOARD_KERNEL_SEPARATED_DT := true
 
@@ -35,11 +37,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-# Camera
-TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
-BOARD_CAMERA_HAVE_ISO := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/sony/rhine-common/cmhw
 
@@ -48,22 +45,18 @@ BOARD_LIB_DUMPSTATE := libdumpstate.sony
 
 # FM Radio
 AUDIO_FEATURE_ENABLED_FM := true
-
-# GPS
-TARGET_PROVIDES_GPS_LOC_API := true
+BOARD_HAVE_QCOM_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_rhine
-
-# RIL
-BOARD_HAS_RIL_LEGACY_PAP := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/sony/rhine-common/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    macaddrsetup.te
+# Platform props
+TARGET_SYSTEM_PROP += device/sony/rhine-common/system.prop
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -79,6 +72,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/sony/rhine-common/rootdir/fstab.qcom

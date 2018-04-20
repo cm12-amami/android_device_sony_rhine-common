@@ -211,38 +211,15 @@ etc/firmware/venus.mdt
 
 # DRM
 bin/qseecomd
-etc/permissions/com.google.widevine.software.drm.xml
-framework/com.google.widevine.software.drm.jar
-lib/libdrmdecrypt.so
 vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib/libwvdrm_L3.so
-vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L3.so
-vendor/lib/drm/libdrmwvmplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
 
 # FM Radio
 bin/fm_qsoc_patches
-
-# GPS
--app/com.qualcomm.location.apk:priv-app/com.qualcomm.location/com.qualcomm.location.apk
-bin/gsiff_daemon
-etc/permissions/com.qualcomm.location.xml
-lib/libloc_api_v02.so
-lib/libloc_ds_api.so
-vendor/lib/hw/flp.default.so
-vendor/lib/libgeofence.so
-vendor/lib/libizat_core.so
-vendor/lib/liblbs_core.so
-vendor/lib/liblocationservice.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/libquipc_ulp_adapter.so
-vendor/lib/libulp2.so
 
 # HDCP
 etc/firmware/tzhdcp.b00
@@ -267,20 +244,6 @@ vendor/firmware/keymaster/keymaster.mdt
 
 # Media config
 etc/media_profiles.xml
-
-# Modem
-bin/netmgrd
-bin/qmuxd
-bin/rmt_storage
-bin/sct_service
-lib/libpin-cache.so
-vendor/lib/libdiag.so
-vendor/lib/libdsi_netctrl.so
-vendor/lib/libdsnetutils.so
-vendor/lib/libdsutils.so
-vendor/lib/libidl.so
-vendor/lib/libnetmgr.so
-vendor/lib/libril-qc-qmi-1.so
 
 # Modem firmware
 etc/firmware/c6x02/mba.b00
@@ -319,19 +282,6 @@ etc/firmware/cmnlib.b01
 etc/firmware/cmnlib.b02
 etc/firmware/cmnlib.b03
 etc/firmware/cmnlib.mdt
-
-# QMI
-vendor/lib/libqcci_legacy.so
-vendor/lib/libqdi.so
-vendor/lib/libqdp.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_client_qmux.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_csvt_srvc.so
-vendor/lib/libqmi_encdec.so
-vendor/lib/libqmiservices.so
-vendor/lib/libqmi.so
 
 # Security
 bin/suntrold
