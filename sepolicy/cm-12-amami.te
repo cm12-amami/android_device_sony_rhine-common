@@ -1,0 +1,28 @@
+#============= sysinit ==============
+allow sysinit app_data_file:dir { getattr search };
+allow sysinit proc:file read;
+
+#============= untrusted_app ==============
+allow untrusted_app rootfs:file getattr;
+allow untrusted_app sysfs:file read;
+allow untrusted_app unlabeled:dir getattr;
+
+#============= mm-qcamerad ==============
+allow mm-qcamerad system_file:file execmod;
+
+#============= netmgrd ==============
+allow netmgrd self:capability { dac_override dac_read_search };
+
+#============= qti_init_shell ==============
+allow qti_init_shell iddd_file:dir search;
+
+#============= rild ==============
+allow rild ta_prop:file getattr;
+
+#============= untrusted_app ==============
+#allow untrusted_app debugfs:file read;
+allow untrusted_app rootfs:dir read;
+allow untrusted_app sysfs:file open;
+
+#============= wcnss_service ==============
+#allow wcnss_service default_prop:property_service set;
