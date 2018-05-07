@@ -1,1 +1,2 @@
 allow rild ta_prop:file { read open };
+allow rild ta_prop:file getattr;
